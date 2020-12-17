@@ -34,7 +34,7 @@ class Usuarios_model extends CI_Model{
         return $this->db->affected_rows();
     }
 
-    public function borrar($usuario_id=""){
+    public function borrar($usuario_id="",$fisico=true){
         $this->db->set("borrado",1);
         $this->db->where("usuario_id",$usuario_id);
         $this->db->limit(1);
