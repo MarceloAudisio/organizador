@@ -33,4 +33,12 @@ class Usuarios_model extends CI_Model{
         $this->db->update("usuarios");
         return $this->db->affected_rows();
     }
+
+    public function borrar($usuario_id=""){
+        $this->db->set("borrado",1);
+        $this->db->where("usuario_id",$usuario_id);
+        $this->db->limit(1);
+        $this->db->update("usuarios");
+        return $this->db->affected_rows();
+    }
 }
